@@ -310,3 +310,19 @@ def logout(request):
         return redirect('/')
     else:
         return redirect('/')
+    
+
+def cart_view(request):
+   
+    if request.session.has_key('userid'):
+        pass
+    else:
+        return redirect('/')
+    ids=request.session['userid']
+    usr=User_Registration.objects.get(id=ids)
+    carts=cart.objects.filter(user=usr)
+    print(carts.values())
+    context={
+        "cart":carts
+    }
+    return render(request, "user\cart_display.html", context)

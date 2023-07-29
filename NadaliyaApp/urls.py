@@ -25,6 +25,5 @@ urlpatterns = [
     path('profile_user_creation/',views.profile_user_creation,name='profile_user_creation'),
     
     path('user_home/',views.user_home,name='user_home'),
-
-    
+    path('cart_view', views.cart_view,name='cart_view'),
     ]
